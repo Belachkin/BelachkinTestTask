@@ -23,5 +23,14 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         _rb.MovePosition(_rb.position + _direction * _speed * Time.fixedDeltaTime);
+
+        if(_direction.x > 0)
+        {
+            gameObject.transform.localScale = Vector3.one;
+        }
+        else if(_direction.x < 0)
+        {
+            gameObject.transform.localScale = new Vector3(-1, 1, 1);
+        }
     }
 }
